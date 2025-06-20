@@ -333,6 +333,15 @@ body.show-chatbot .chatbot {
         right: 0;
     }
 
+    .chatbot header span.close-btn {
+        display: block !important;
+        /* Ensure the close button is visible */
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
     .chatbot header {
         border-radius: 0;
     }
