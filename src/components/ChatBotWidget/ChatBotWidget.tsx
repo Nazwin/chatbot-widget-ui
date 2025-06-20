@@ -92,16 +92,32 @@ const ChatBotWidget = ({
   };
 
   const toggleChatbot = () => {
-    document.body.classList.toggle("show-chatbot");
+    const body = document.body;
+
+    if (body.classList.contains("show-chatbot")) {
+      body.classList.remove("show-chatbot");
+      body.classList.add("hide-chatbot");
+    } else {
+      body.classList.remove("hide-chatbot");
+      body.classList.add("show-chatbot");
+    }
   };
 
   useEffect(() => {
-    const closeBtn: any = document.querySelector(".close-btn");
-    closeBtn.addEventListener("click", toggleChatbot);
+    const closeBtn = document.querySelector(".close-btn");
+    if (closeBtn) {
+      const handleClose = () => toggleChatbot();
 
-    return () => {
-      closeBtn.removeEventListener("click", toggleChatbot);
-    };
+      // Add event listeners for both click and touch events
+      closeBtn.addEventListener("click", handleClose);
+      closeBtn.addEventListener("touchend", handleClose);
+
+      // Cleanup function to remove the event listeners
+      return () => {
+        closeBtn.removeEventListener("click", handleClose);
+        closeBtn.removeEventListener("touchend", handleClose);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -149,15 +165,14 @@ const ChatBotWidget = ({
               <p
                 style={
                   msg.role === "assistant"
-                  ? botFontStyle 
-                  : msg.role === "error"
-                  ? botFontStyle
-                  : { background: primaryColor }
+                    ? botFontStyle
+                    : msg.role === "error"
+                    ? botFontStyle
+                    : { background: primaryColor }
                 }
-                {...(useInnerHTML 
-                  ? {dangerouslySetInnerHTML: { __html: msg.content }}
-                  : {children: msg.content}
-                )}
+                {...(useInnerHTML
+                  ? { dangerouslySetInnerHTML: { __html: msg.content } }
+                  : { children: msg.content })}
               />
             </li>
           ))}
