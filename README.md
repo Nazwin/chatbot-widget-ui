@@ -65,6 +65,16 @@ import { ChatBotWidget } from "chatbot-widget-ui";
     color: "#888",
     fontStyle: "italic",
   }}
+  userFontStyle={{
+    fontFamily: "Arial",
+    fontSize: "14px",
+    color: "blue",
+  }}
+  chatInputStyle={{
+    backgroundColor: "#f0f0f0",
+    color: "#222",
+    fontSize: "16px",
+  }}
   useInnerHTML={true}
 />
 ```
@@ -143,6 +153,16 @@ const App = () => {
             color: "#888",
             fontStyle: "italic",
           }}
+          userFontStyle={{
+            fontFamily: "Arial",
+            fontSize: "14px",
+            color: "blue",
+          }}
+          chatInputStyle={{
+            backgroundColor: "#f0f0f0",
+            color: "#222",
+            fontSize: "16px",
+          }}
           useInnerHTML={true}
         />
     </div>
@@ -166,6 +186,8 @@ export default App;
 | `botIcon`             | any      | `BotIcon()` (ReactElement)                        | The icon displayed with bot messages and error messages.                            |
 | `botFontStyle`        | object   | `{}`                                              | The font style for bot messages.                                                    |
 | `typingFontStyle`     | object   | `{}`                                              | The font style for the "is typing" message.                                         |
+| `userFontStyle`       | object   | `{}`                                              | The font style for user (outgoing) messages.                                        |
+| `chatInputStyle`      | object   | `{}`                                              | The style for the chat input textarea.                                              |
 | `handleNewMessage`    | function | N/A                                               | Processes new messages and updates the conversation state.                          |
 | `onBotResponse`       | function | N/A                                               | Processes new messages and updates the conversation state.                          |
 | `messages`            | array    | `[]`                                              | The array of messages to display in the chat.                                       |
