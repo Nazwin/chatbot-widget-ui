@@ -17,6 +17,8 @@ interface ChatWidgetIOProps {
   botIcon?: React.ReactNode;
   botFontStyle?: React.CSSProperties;
   typingFontStyle?: React.CSSProperties;
+  userFontStyle?: React.CSSProperties;
+  chatInputStyle?: React.CSSProperties;
   handleNewMessage?: (message: Message) => void;
   onBotResponse?: (response: string) => void;
   messages?: Message[];
@@ -34,6 +36,8 @@ const ChatBotWidget = ({
   botIcon = <BotIcon />,
   botFontStyle = {},
   typingFontStyle = {},
+  userFontStyle = {},
+  chatInputStyle = {},
   handleNewMessage,
   onBotResponse,
   messages = [],
@@ -168,6 +172,8 @@ const ChatBotWidget = ({
                     ? botFontStyle
                     : msg.role === "error"
                     ? botFontStyle
+                    : msg.role === "user"
+                    ? userFontStyle
                     : { background: primaryColor }
                 }
                 {...(useInnerHTML
@@ -193,6 +199,7 @@ const ChatBotWidget = ({
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
             maxLength={500}
+            style={chatInputStyle}
           />
           <span
             id="send-btn"
