@@ -175,12 +175,13 @@ body.show-chatbot .chatbot {
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    margin: 0;
 }
 
 .chatbot .chatbox {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 15px 10px;
+    padding: 16px 20px;
     background: #fff;
 }
 
@@ -284,7 +285,7 @@ body.show-chatbot .chatbot {
     align-items: center;
     gap: 12px;
     background: #fff;
-    padding: 5px 20px;
+    padding: 10px 20px 16px;
     border-top: 1px solid #ccc;
 }
 
@@ -297,23 +298,20 @@ body.show-chatbot .chatbot {
     outline: none;
     font-size: 0.95rem;
     resize: none;
-    padding: 16px 15px 16px 8px;
     border-radius: 5px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     /* Enables scrolling when needed */
 }
 
 .chat-input span {
-    color: #4aa017;
+    color: rgb(201, 203, 216);
     font-size: 20px;
     cursor: pointer;
-    visibility: hidden;
     transition: 0.3s ease;
 }
 
 .chat-input textarea:valid~span {
-    visibility: visible;
+    color: #4aa017;
 }
 
 @media (max-width: 767px) {

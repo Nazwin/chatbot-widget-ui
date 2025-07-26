@@ -205,14 +205,18 @@ const ChatBotWidget = ({
             id="send-btn"
             className="material-symbols-outlined"
             onClick={handleChat}
-            style={{
-              color: primaryColor,
-            }}
           >
             send
           </span>
         </div>
       </div>
+      <style>
+        {`
+          .chat-input textarea:valid~span {
+              color: ${primaryColor};
+          }
+        `}
+      </style>
     </div>
   );
 };
