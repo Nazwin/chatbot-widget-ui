@@ -103,6 +103,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
 
 .chatbot {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     right: 70px;
     bottom: 80px;
     overflow: hidden;
@@ -114,8 +116,7 @@ body.show-chatbot .chatbot-toggler span:last-child {
     background: #fff;
     transform-origin: bottom right;
     border-radius: 15px;
-    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
-        0 32px 64px -48px rgba (0, 0, 0, 0.5);
+    box-shadow: rgba(0, 18, 46, 0.16) 0px 8px 18px 0px;
     transition: all 0.1s ease;
 }
 
@@ -177,13 +178,10 @@ body.show-chatbot .chatbot {
 }
 
 .chatbot .chatbox {
+    flex-grow: 1;
     overflow-y: auto;
-    padding: 15px 10px 100px;
-    /* Increased bottom padding */
-    height: 400px;
+    padding: 15px 10px;
     background: #fff;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .chatbox .chat {
@@ -281,11 +279,10 @@ body.show-chatbot .chatbot {
 }
 
 .chatbot .chat-input {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 12px;
     background: #fff;
     padding: 5px 20px;
     border-top: 1px solid #ccc;
@@ -308,16 +305,11 @@ body.show-chatbot .chatbot {
 }
 
 .chat-input span {
-    align-self: flex-end;
-    height: 40px;
-    line-height: 55px;
     color: #4aa017;
-    font-size: 1.35rem;
+    font-size: 20px;
     cursor: pointer;
     visibility: hidden;
     transition: 0.3s ease;
-    justify-content: flex-end;
-    height: 100%;
 }
 
 .chat-input textarea:valid~span {
