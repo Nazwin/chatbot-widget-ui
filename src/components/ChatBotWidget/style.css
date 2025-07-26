@@ -172,10 +172,9 @@ body.show-chatbot .chatbot {
 
 .chatbot header h2 {
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.2em;
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin: 0;
 }
 
 .chatbot .chatbox {
@@ -183,6 +182,7 @@ body.show-chatbot .chatbot {
     overflow-y: auto;
     padding: 16px 20px;
     background: #fff;
+    margin: 0;
 }
 
 .chatbox .chat {

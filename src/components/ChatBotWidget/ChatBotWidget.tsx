@@ -168,9 +168,7 @@ const ChatBotWidget = ({
               )}
               <p
                 style={
-                  msg.role === "assistant"
-                    ? botFontStyle
-                    : msg.role === "error"
+                  msg.role === "assistant" || msg.role === "error"
                     ? botFontStyle
                     : msg.role === "user"
                     ? userFontStyle
@@ -213,7 +211,10 @@ const ChatBotWidget = ({
       <style>
         {`
           .chat-input textarea:valid~span {
-              color: ${primaryColor};
+            color: ${primaryColor};
+          }
+          .chatbox .incoming span {
+            background: ${primaryColor};
           }
         `}
       </style>
