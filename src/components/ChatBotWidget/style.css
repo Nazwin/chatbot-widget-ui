@@ -29,6 +29,7 @@
 
 .chatbot-toggler {
     position: fixed;
+    z-index: 1000000;
     bottom: 40px;
     right: 40px;
     outline: none;
@@ -103,6 +104,7 @@ body.show-chatbot .chatbot-toggler span:last-child {
 
 .chatbot {
     position: fixed;
+    z-index: 1000000;
     display: flex;
     flex-direction: column;
     right: 70px;
@@ -343,12 +345,6 @@ body.show-chatbot .chatbot {
     .chatbot .chat-input textarea {
         padding: 16px 15px 16px 0;
     }
-
-    .chatbot .chat-input span {
-        height: 55px;
-        line-height: 55px;
-        font-size: 1.35rem;
-    }
 }
 
 @media (max-width: 575px) {
@@ -370,11 +366,5 @@ body.show-chatbot .chatbot {
 
     .chatbot .chat-input textarea {
         padding: 16px 15px 16px 0;
-    }
-
-    .chatbot .chat-input span {
-        height: 55px;
-        line-height: 55px;
-        font-size: 1.35rem;
     }
 }
